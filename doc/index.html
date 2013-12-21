@@ -52,7 +52,8 @@ cd
 mkdir gopkg
 export GOPATH=$HOME/gopkg
 go get github.com/agl/pond/client
-$GOPATH/bin/client</pre>
+$GOPATH/bin/client
+pond-client</pre>
 
 <h5>Debian Wheezy and Ubuntu 12.04</h5>
 
@@ -69,7 +70,10 @@ mkdir ~/amnesia/Persistent/go/
 export GOPATH=$HOME/Persistent/go/
 export PATH=$PATH:$GOPATH/bin
 go get -tags nogui github.com/agl/pond/client
-alias pond-client="$GOPATH/bin/client --state-file=/home/amnesia/Persistent/.pond"</pre>
+//if http connection error returned, 
+  torify go get -tags nogui github.com/agl/pond/client
+alias pond-client="$GOPATH/bin/client --state-file=/home/amnesia/Persistent/.pond"
+pond-client</pre>
 
 <h5>Fedora 19</h5>
 
@@ -86,7 +90,8 @@ export PATH=$PATH:$HOME/go/bin
 mkdir gopkg
 export GOPATH=$HOME/gopkg
 go get github.com/agl/pond/client
-$GOPATH/bin/client</pre>
+$GOPATH/bin/client
+pond-client</pre>
 
 <h5>Arch</h5>
 <pre>
@@ -97,7 +102,7 @@ export GOPATH=$HOME/gopkg
 go get github.com/agl/pond/client
 systemctl start tor.service
 $GOPATH/bin/client
-</pre>
+pond-client</pre>
 
 <p>In order to actually use the TPM, you'll need to <tt>systemctl start tcsd</tt>.</p>
 
@@ -117,7 +122,7 @@ export PKG_CONFIG_PATH=/opt/X11/lib/pkgconfig:/usr/local/lib/pkgconfig:$PKG_CONF
 
 go get github.com/agl/pond/client
 // now `client` should be in your path
-</pre>
+pond-client</pre>
 
 <p>However, unless you are already familiar with GTK development on OS X, I'd suggest using a Linux machine at this point. Since OS X development doesn't occur on my main development machine, I have to move patches across which also means that github doesn't always have the most up-to-date OS X changes.</p>
 
